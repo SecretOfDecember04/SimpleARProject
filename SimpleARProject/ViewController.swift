@@ -21,5 +21,10 @@ class ViewController: UIViewController {
         
         let sphereEntity = ModelEntity(mesh: sphere, materials: [material])
         
+        // create anchor
+        let sphereAnchor = AnchorEntity(world: SIMD3(x: 0, y: 0, z: 0))
+        sphereAnchor.addChild(sphereEntity)
+        
+        
     }
 }
