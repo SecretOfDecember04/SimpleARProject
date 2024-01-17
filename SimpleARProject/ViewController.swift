@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+        // create the 3d model
+        let sphere = MeshResource.generateSphere(radius: 0.05)
+        let material = SimpleMaterial(color: .darkGray, roughness: 0, isMetallic: true)
         
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+        let sphereEntity = ModelEntity(mesh: sphere, materials: [material])
+        
     }
 }
